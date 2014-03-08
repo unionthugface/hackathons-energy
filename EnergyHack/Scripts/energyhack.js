@@ -37,3 +37,16 @@ EnergyHack.Services.TakeUserInput = function () {
         //errorfunction
     };
 }
+
+EnergyHack.Services.GetApplianceData = function () {
+
+    this.URL = "/api/home/appliancesignal";
+    this.Method = 'GET';
+    this.Data = null;
+    this.Success = function () {
+        //success function
+    }
+    this.Error = function () {
+        //error function
+    }
+}

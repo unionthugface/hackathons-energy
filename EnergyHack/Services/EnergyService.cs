@@ -28,6 +28,7 @@ namespace EnergyHack.Services
             SignatureResponse applianceSignature = new SignatureResponse();
             applianceSignature.EnergyConsumed = reader.GetFloat(0);
             applianceSignature.Appliance = reader.GetString(1);
+            applianceSignature.SignalDate = DateTime.Parse(reader.GetString(2));
 
             return applianceSignature;
 
