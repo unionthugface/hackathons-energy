@@ -33,10 +33,10 @@ namespace EnergyHack.Services
 
         }
 
-        public static List<float> GetInfoByAppliance(string applianceName)
+        public static List<SignatureResponse> GetInfoByAppliance(string applianceName)
         {
 
-            List<float> sigList = null;
+            List<SignatureResponse> sigList = null;
 
             string storedProc = "dbo.GetApplianceInformation";
 
@@ -47,10 +47,10 @@ namespace EnergyHack.Services
 
                     if(sigList == null){
 
-                        sigList = new List<float>();
+                        sigList = new List<SignatureResponse>();
                     }
 
-                    sigList.Add(reader.GetFloat(0));
+                    sigList.Add(MapAppliance(reader));
                 }
                 ,inputParamMapper: delegate(SqlParameterCollection param){
 
