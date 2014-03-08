@@ -1,0 +1,187 @@
+﻿@{
+    ViewBag.Title = "UserForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section stylesheets{
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+
+    <style>
+        .input_number {
+            border: 0;
+            color: #f6931f;
+            font-weight: bold;
+            width: 2em;
+        }
+    </style>
+
+}
+
+<h2>UserForm</h2>
+
+
+<form id="userForm" class="container">
+    <div class="form-group row">
+        <div class="col-xs-6">
+            <label for="heaters">Number of Heaters:</label>
+            <input type="number" id="heaters" name="heaters" class="input_number" />
+            <div id="heaterSlider"></div>
+        </div>
+        <div class="col-xs-6">
+            <img src="http://lolcat.com/images/lolcats/1338.jpg" class="img-responsive" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-xs-6">
+            <label for="washers">Number of Washers:</label>
+            <input type="number" name="washers" id="washers" class="input_number" />
+            <div id="washerSlider"></div>
+        </div>
+        <div class="col-xs-6">
+            <img src="http://lolcat.com/images/lolcats/1338.jpg" class="img-responsive" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-xs-6">
+            <label for="dryers">Number of Dryers:</label>
+            <input type="number" name="dryers" id="dryers" class="input_number" />
+            <div id="dryerSlider"></div>
+        </div>
+        <div class="col-xs-6">
+            <img src="http://lolcat.com/images/lolcats/1338.jpg" class="img-responsive" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-xs-6">
+            <label for="ovens">Number of Ovens:</label>
+            <input type="number" name="ovens" id="ovens" class="input_number" />
+            <div id="ovenSlider"></div>
+        </div>
+        <div class="col-xs-6">
+            <img src="http://lolcat.com/images/lolcats/1338.jpg" class="img-responsive" />
+        </div>
+    </div>
+    <input type="submit" class="btn btn-default" id="submitButton" value="Submit" />
+</form>
+
+<!--Div that will hold the pie chart-->
+<div id="chart_div"></div>
+
+
+@section scripts{
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    <script type="text/javascript">
+
+        EnergyHack.Page.SliderSetUp = function () {
+            $("#heaterSlider").slider({
+                min: 0,
+                max: 3,
+                step: 1,
+                slide: function (event, ui) {
+                    $("#heaters").val(ui.value);
+                }
+            });
+            $("#heaters").val($("#heaterSlider").slider("value"));
+            $("#washerSlider").slider({
+                min: 0,
+                max: 3,
+                step: 1,
+                slide: function (event, ui) {
+                    $("#washers").val(ui.value);
+                }
+            });
+            $("#washers").val($("#washerSlider").slider("value"));
+            $("#dryerSlider").slider({
+                min: 0,
+                max: 3,
+                step: 1,
+                slide: function (event, ui) {
+                    $("#dryers").val(ui.value);
+                }
+            });
+            $("#dryers").val($("#dryerSlider").slider("value"));
+            $("#ovenSlider").slider({
+                min: 0,
+                max: 3,
+                step: 1,
+                slide: function (event, ui) {
+                    $("#ovens").val(ui.value);
+                }
+            });
+            $("#ovens").val($("#ovenSlider").slider("value"));
+
+        }
+
+        EnergyHack.Page.ClickSubmit = function () {
+
+            $("#submitButton").bind("click", function (evt) {
+                evt.preventDefault();
+                EnergyHack.Page.SubmitData();
+            });
+        }
+
+        EnergyHack.Page.SubmitData = function (frm) {
+
+            var userData = new EnergyHack.Services.TakeUserInput();
+            userData.Data = $("#userForm").serialize();
+            EnergyHack.Ajax(userData);
+
+        }
+
+        EnergyHack.Page.GoogleGraphsDraw = function(){
+
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Topping');
+            data.addColumn('number', 'Slices');
+            data.addRows([
+              ['Mushrooms', 3],
+              ['Onions', 1],
+              ['Olives', 1],
+              ['Zucchini', 1],
+              ['Pepperoni', 2]
+            ]);
+
+            // Set chart options
+            var options = {'title':'How Much Pizza I Ate Last Night',
+                'width':400,
+                'height':300};
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+
+        }
+
+        EnergyHack.Page.GoogleGraphsLoad = function () {
+
+            // Load the Visualization API and the piechart package.
+            google.load('visualization', '1.0', {'packages':['corechart']});
+
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.setOnLoadCallback(drawChart);
+
+            // Callback that creates and populates a data table,
+            // instantiates the pie chart, passes in the data and
+            // draws it.
+            
+            EnergyHack.Page.GoogleGraphsDraw();
+
+
+        }
+
+        EnergyHack.Page.StartUp = function () {
+
+            EnergyHack.Page.SliderSetUp();
+            EnergyHack.Page.ClickSubmit();
+            EnergyHack.Page.GoogleGraphsLoad();
+
+        }
+
+    </script>
+}
