@@ -63,5 +63,21 @@ namespace EnergyHack.Services
 
         }
 
+        public static List<SignatureResponse> GetInfoByDate(DateTime date)
+        {
+            List<SignatureResponse> sigList = null;
+
+            string storedProc = "dbo.GetPieInfo";
+
+            EnergyHackData.ExecuteCmd(
+                
+                GetConnection,
+                storedProc,
+
+                
+                )
+
+        }
+
     }
 }
