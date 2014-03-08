@@ -33,5 +33,12 @@ namespace EnergyHack.Controllers
 
             return View();
         }
+
+        public ActionResult Recommendations()
+        {
+            ViewBag.Message = "Recommendations";
+
+            return View();
+        }
     }
 }
