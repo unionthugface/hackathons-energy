@@ -42,6 +42,24 @@ namespace EnergyHack.Controllers
 
         }
 
+        [Route("piechartdata")]
+        [HttpGet]
+        public HttpResponseMessage PieChart(PieChartRequest model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+            }
+            else
+            {
+                List<SignatureResponse> respModel = new List<SignatureResponse>();
+
+                respModel = EnergyService.GetInfoByDate(model.Date);
+
+                return Request.CreateResponse(HttpStatusCode.OK, respModel);
+            }
+        }
+
 
 
     }

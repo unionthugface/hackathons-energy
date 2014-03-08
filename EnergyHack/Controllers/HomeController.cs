@@ -40,5 +40,12 @@ namespace EnergyHack.Controllers
 
             return View();
         }
+
+        public ActionResult EnergyUse()
+        {
+            ViewBag.Message = "Graphs";
+
+            return View();
+        }
     }
 }

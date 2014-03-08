@@ -63,7 +63,7 @@ namespace EnergyHack.Services
 
         }
 
-        public static List<SignatureResponse> GetInfoByDate(DateTime date)
+        public static List<SignatureResponse> GetInfoByDate(string date)
         {
             List<SignatureResponse> sigList = null;
 
@@ -73,9 +73,22 @@ namespace EnergyHack.Services
                 
                 GetConnection,
                 storedProc,
+                map: delegate(IDataReader reader, short set){
 
-                
-                )
+                    if(sigList == null){
+
+                        sigList = new List<SignatureResponse>();
+
+                    }
+
+                    sigList.Add(MapAppliance(reader));
+                }
+                ,inputParamMapper: delegate(SqlParameterCollection param){
+
+                    param.AddWithValue("Date", String.Format("{0:s}", DateTime.Parse(date)));
+                });
+
+            return sigList;
 
         }
 
