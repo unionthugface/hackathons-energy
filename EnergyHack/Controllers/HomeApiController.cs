@@ -33,7 +33,7 @@ namespace EnergyHack.Controllers
             }
             else
             {
-                SignatureResponse respModel = new SignatureResponse();
+                List<SignatureResponse> respModel = new List<SignatureResponse>();
 
                 respModel = EnergyService.GetInfoByAppliance(model.Appliance);
 
