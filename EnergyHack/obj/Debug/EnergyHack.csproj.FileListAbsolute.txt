@@ -56,3 +56,6 @@ C:\Users\SawbackAdmin\Documents\Visual Studio 2013\Projects\EnergyHack\EnergyHac
 C:\Users\SawbackAdmin\Documents\Visual Studio 2013\Projects\EnergyHack\EnergyHack\EnergyHack\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\SawbackAdmin\Documents\Visual Studio 2013\Projects\EnergyHack\EnergyHack\EnergyHack\obj\Debug\EnergyHack.dll
 C:\Users\SawbackAdmin\Documents\Visual Studio 2013\Projects\EnergyHack\EnergyHack\EnergyHack\obj\Debug\EnergyHack.pdb
+C:\Projects\hackathons-energy\EnergyHack\obj\Debug\EnergyHack.csprojResolveAssemblyReference.cache
+C:\Projects\hackathons-energy\EnergyHack\obj\Debug\EnergyHack.dll
+C:\Projects\hackathons-energy\EnergyHack\obj\Debug\EnergyHack.pdb

@@ -53,7 +53,7 @@ function drawLineChart() {
 
     for (var i = 0; i < energyArray.length; i++) {
         if (energyArray[i].date === date) {
-            data.addRow([energyArray[i].appliance, energyArray[i].usage]);
+            data.addRow([energyArray[i].date, energyArray[i].usage]);
         }
     }
 
@@ -61,12 +61,11 @@ function drawLineChart() {
     var options = {
         'width': 600,
         'height': 400,
-        'is3D': true,
         'legend': 'none'
     };
 
     // Instantiate and draw our chart, passing in some options.
-    var chart = new google.visualization.PieChart(document.getElementById('pie-chart-div'));
+    var chart = new google.visualization.PieChart(document.getElementById('line-chart-div'));
     chart.draw(data, options);
 
 }
@@ -149,4 +148,9 @@ function updatePieData(date) {
     
     redrawPieChart(data);
     
+}
+
+function drawCharts() {
+    drawPieChart();
+    drawLineChart();
 }
