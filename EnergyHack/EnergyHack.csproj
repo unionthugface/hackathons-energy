@@ -182,7 +182,9 @@
     <Compile Include="Interfaces\IDao.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Requests\SignatureRequestModel.cs" />
     <Compile Include="Models\Requests\UserInputRequest.cs" />
+    <Compile Include="Models\Responses\SignatureResponse.cs" />
     <Compile Include="Models\Responses\UserInputResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\SqlDao.cs" />
@@ -306,6 +308,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\UserForm.cshtml" />
     <Content Include="Views\Home\EnergyUse.cshtml" />
+    <Content Include="Views\Home\Recommendations.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

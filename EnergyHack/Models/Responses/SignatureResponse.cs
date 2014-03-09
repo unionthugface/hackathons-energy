@@ -12,6 +12,6 @@ namespace EnergyHack.Models.Responses
 
         public string Appliance { get; set; }
 
-        List<float> signalList { get; set; }
+        public DateTime SignalDate { get; set; }
     }
 }

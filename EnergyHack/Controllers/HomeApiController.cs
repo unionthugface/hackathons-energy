@@ -1,5 +1,6 @@
 ﻿using EnergyHack.Models.Requests;
 using EnergyHack.Models.Responses;
+using EnergyHack.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,16 +27,22 @@ namespace EnergyHack.Controllers
         [HttpGet]
         public HttpResponseMessage ApplianceSignal(SignatureRequestModel model)
         {
-            SignatureResponse respModel = new SignatureResponse();
+            if (!ModelState.IsValid)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+            }
+            else
+            {
+                List<SignatureResponse> respModel = new List<SignatureResponse>();
 
+                respModel = EnergyService.GetInfoByAppliance(model.Appliance);
 
-
-
-            return Request.CreateResponse(HttpStatusCode.OK, respModel);
+                return Request.CreateResponse(HttpStatusCode.OK, respModel);
+            }
 
         }
 
 
-        
+
     }
 }
