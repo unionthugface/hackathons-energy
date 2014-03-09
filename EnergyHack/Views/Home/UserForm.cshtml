@@ -133,14 +133,27 @@
 
         }
 
-        EnergyHack.Page.GoogleGraphsDraw = function(appliance){
+        
+
+        EnergyHack.Page.GoogleGraphsLoad = function () {
+
+            // Load the Visualization API and the piechart package.
+            
+
+            EnergyHack.Page.GoogleGraphsDraw("heater");
+            EnergyHack.Page.GoogleGraphsDraw("oven");
+            EnergyHack.Page.GoogleGraphsDraw("dryer");
+            // Set a callback to run when the Google Visualization API is loaded.
+        }
+
+        EnergyHack.Page.GoogleGraphsDraw = function (appliance) {
 
             var usageArray = [];
 
             $.ajax({
                 type: "POST",
-                url: "homeapi/appliancesignal",
-                data: { appliance: appliance },
+                url: "/api/home/appliancesignal",
+                data: { Appliance: appliance },
                 success: function (data) {
                     usageArray = data;
                 },
@@ -153,15 +166,17 @@
             var data = new google.visualization.DataTable();
             data.addColumn('datetime', 'Time');
             data.addColumn('number', 'Usage');
-            
+
             for (var i = 0; i < usageArray.length; i++) {
                 data.AddRow(usageArray[i].SignalDate, usageArray[i].Usage);
             }
 
             // Set chart options
-            var options = {'title':'Signature',
-                'width':400,
-                'height':300};
+            var options = {
+                'title': 'Signature',
+                'width': 400,
+                'height': 300
+            };
 
             // Instantiate and draw our chart, passing in some options.
             var divId = "#" + appliance + "-line-chart";
@@ -170,19 +185,8 @@
 
         }
 
-        EnergyHack.Page.GoogleGraphsLoad = function () {
-
-            // Load the Visualization API and the piechart package.
-            google.load('visualization', '1.0', {'packages':['corechart']});
-
-            EnergyHack.Page.GoogleGraphsDraw("heater");
-            EnergyHack.Page.GoogleGraphsDraw("oven");
-            EnergyHack.Page.GoogleGraphsDraw("dryer");
-            // Set a callback to run when the Google Visualization API is loaded.
-        }
-
         EnergyHack.Page.StartUp = function () {
-
+            google.load('visualization', '1.0', { 'packages': ['corechart'] });
             EnergyHack.Page.SliderSetUp();
             EnergyHack.Page.ClickSubmit();
             EnergyHack.Page.GoogleGraphsLoad();

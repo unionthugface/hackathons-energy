@@ -8,7 +8,7 @@ namespace EnergyHack.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult EnergyUse()
         {
             return View();
         }
