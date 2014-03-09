@@ -3,36 +3,40 @@
     ViewBag.Title = "Recommendations";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link href='http://fonts.googleapis.com/css?family=Spinnaker' rel='stylesheet' type='text/css'>
 
-<h2 style="text-align:center">Recommendation System</h2>
-<p style="text-align:center">What can be better?</p>
+<h2 style="text-align:center; font-family:Spinnaker">How can I save?</h2>
+@*<p style="text-align:center">What can be better?</p>*@
 
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active" data-interval="5000"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1" data-interval="5000"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2" data-interval="5000"></li>
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
         <div class="item active">
-            <div style="height: 150px; width:auto; background-color:#1bb2dd"></div>
+            <div style="height: 200px; width:auto; background-color:#1bb2dd; "></div>
             <div class="carousel-caption">
-                <h3>Clean your HVAC filters.</h3>
+                <h3 style="font-family:Spinnaker">Change your pricing from tier to peak pricing and save $6/month.</h3>
+                <p style="font-family:Spinnaker">83% of your energy consumption is during peak hours. Call your provider and ask to change your pricing for peak pricing.</p>
             </div>
         </div>
         <div class="item">
-            <div style="height: 150px; width:auto; background-color:#50ce9e"></div>
+            <div style="height: 200px; width:auto; background-color:#e77a7a"></div>
             <div class="carousel-caption">
-                <h3>A high-efficiency washer can save you $15/month.</h3>
+                <h3 style="font-family:Spinnaker">A high-efficiency washer can save you $15/month.</h3>
+                <p style="font-family:Spinnaker">Based on your usage pattern for the washer, there are other washer models that may perform better.</p>
             </div>
         </div>
         <div class="item">
-            <div style="height: 150px; width:auto; background-color:#edc744"></div>
+            <div style="height: 200px; width:auto; background-color:#fe953a"></div>
             <div class="carousel-caption">
-                <h3>Solar panels for heating can save you $13/month.</h3>
+                <h3 style="font-family:Spinnaker">Do your laundry after 6pm and save $13/month.</h3>
+                <p style="font-family:Spinnaker">46% of your washer and dryer usage has occurred during peak pricing hours.</p>
             </div>
         </div>
     </div>

@@ -1,32 +1,82 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@section stylesheets {
+    <style>
+        .ui-datepicker-inline.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all {
+            margin-top: 80px;
+            margin-left: 130px;
+        }
+    </style>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+}
 
-    <div class="container">
-        <div class="header">
-            <ul class="nav nav-pills pull-right">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            <h3 class="text-muted">Hack for DoE</h3>
-        </div>
-        <div class="row marketing" style="text-align: center; margin:auto">
+@section scripts {
+    <script src="~/Scripts/jquery-ui.js"></script>
+    <script type='text/javascript' src='http://www.google.com/jsapi'></script>
+    <script type="text/javascript">
+        google.load('visualization', '1.1', { 'packages': ['table', 'map', 'corechart', 'annotationchart'] });
+
+        function initialize() {
+            // The URL of the spreadsheet to source data from.
+            var query = new google.visualization.Query(
+                'https://docs.google.com/spreadsheet/ccc?key=0Agwv43LK71pfdFdKUklmZmQwTlFuS1gzbURYOVFMakE#gid=0');
+            query.send(draw);
+        }
+
+        function draw(response) {
+            if (response.isError()) {
+                alert('Error in query');
+            }
+
+            var ticketsData = response.getDataTable();
+            var chart = new google.visualization.ColumnChart(
+                document.getElementById('histogram-div'));
+            chart.draw(ticketsData, {
+                'isStacked': true, 'legend': 'bottom',
+                'vAxis': { 'title': 'Power Consumption' }
+            });
+
+            // Set a 'select' event listener for the table.
+            // When the table is selected, we set the selection on the map.
+            google.visualization.events.addListener(table, 'select',
+                function () {
+                    map.setSelection(table.getSelection());
+                });
+
+            // Set a 'select' event listener for the map.
+            // When the map is selected, we set the selection on the table.
+            google.visualization.events.addListener(map, 'select',
+                function () {
+                    table.setSelection(map.getSelection());
+                });
+
+            
+        }                                       
+    </script>
+
+    <script src="~/Scripts/hackForDoE-usage.js"></script>
+    
+    
+}
+
+
+<div class="container">
+    <div class="row" style="text-align: center; margin:auto">
+        <div class="col-md-6 col-sm-12" style="text-align:center; margin:auto; float:left">
             <h4>Choose a date range</h4>
-            <div style="margin:auto">
-                <div id="from" class="pull-left"></div>
-                <input type="text" hidden="hidden" id="from-field" />
-            </div>
+            <div id="from" class="pull-left"></div>
         </div>
-        <div class="row marketing" style="text-align: center">
+        <div class="col-md-6" style="text-align: center; float:right">
             <h4>Energy Usage by Appliance</h4>
             <div id="pie-chart-div"></div>
         </div>
-        <div class="row marketing">
-            <h4>Total Energy Use Over Time</h4>
-            <div id="line-chart-div"></div>
-        </div>
-        <div class="footer">
-            <p>Hack for DoE 2014</p>
-        </div>
     </div>
+    <div class="row" style="text-align:center">
+        <h4>Total Energy Use Over Time</h4>
+        <div id="line-chart-div"></div>
+        <div id="histogram-div"></div>
+        <button id="toggle" data-id="first" class="btn btn-default" style="margin-top:15px">Toggle Chart</button>
+    </div>
+</div>
+

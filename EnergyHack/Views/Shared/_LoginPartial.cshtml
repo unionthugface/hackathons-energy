@@ -16,8 +16,12 @@
 else
 {
     <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Graphs", "EnergyUse", "Home")</li>
+        <li>@Html.ActionLink("Recommendations", "Recommendations", "Home")</li>
+        <li>@Html.ActionLink("Configurations", "UserForm", "Home", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        <li> <h4>|</h4></li>
         <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
         <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-        <li>@Html.ActionLink("Configurations", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        
     </ul>
 }

@@ -19,48 +19,60 @@
 
 }
 
-<h2>UserForm</h2>
+<h3>How many appliances are in your home?</h3>
 
 
 <form id="userForm" class="container">
     <div class="form-group row">
         <div class="col-xs-6">
-            <label for="heaters">Number of Heaters:</label>
-            <input type="number" id="heaters" name="heaters" class="input_number" />
-            <div id="heaterSlider"></div>
+            <div style="position:relative; padding-top: 100px">
+                <label for="heaters">Number of Heaters:</label>
+                <input type="number" id="heaters" name="heaters" class="input_number" />
+                <div id="heaterSlider"></div>
+            </div>
         </div>
         <div class="col-xs-6">
-            <img src="http://lolcat.com/images/lolcats/1338.jpg" class="img-responsive" />
-        </div>
-    </div>
-    <div class="form-group row">
-        <div class="col-xs-6">
-            <label for="washers">Number of Washers:</label>
-            <input type="number" name="washers" id="washers" class="input_number" />
-            <div id="washerSlider"></div>
-        </div>
-        <div class="col-xs-6">
-            <img src="http://lolcat.com/images/lolcats/1338.jpg" class="img-responsive" />
+            <p>Heater Energy Signature</p>
+            <img class="img-responsive" src="/img/HeaterWatt.png" />
         </div>
     </div>
     <div class="form-group row">
         <div class="col-xs-6">
-            <label for="dryers">Number of Dryers:</label>
-            <input type="number" name="dryers" id="dryers" class="input_number" />
-            <div id="dryerSlider"></div>
+            <div style="position:relative; padding-top: 100px">
+                <label for="washers">Number of Washers:</label>
+                <input type="number" name="washers" id="washers" class="input_number" />
+                <div id="washerSlider"></div>
+            </div>
         </div>
         <div class="col-xs-6">
-            <img src="http://lolcat.com/images/lolcats/1338.jpg" class="img-responsive" />
+            <p>Washer Energy Signature</p>
+            <img class="img-responsive" src="/img/WasherWatt.png" />
         </div>
     </div>
     <div class="form-group row">
         <div class="col-xs-6">
-            <label for="ovens">Number of Ovens:</label>
-            <input type="number" name="ovens" id="ovens" class="input_number" />
-            <div id="ovenSlider"></div>
+            <div style="position:relative; padding-top: 100px">
+                <label for="dryers">Number of Dryers:</label>
+                <input type="number" name="dryers" id="dryers" class="input_number" />
+                <div id="dryerSlider"></div>
+            </div>
         </div>
         <div class="col-xs-6">
-            <img src="http://lolcat.com/images/lolcats/1338.jpg" class="img-responsive" />
+            <p>Dryer Energy Signature</p>
+            <img class="img-responsive" src="/img/DryerWatt.png" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-xs-6">
+            <div style="position:relative; padding-top: 100px">
+                <label for="ovens">Number of Ovens:</label>
+                <input type="number" name="ovens" id="ovens" class="input_number" />
+                <div id="ovenSlider"></div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <p>Oven Energy Signature</p>
+            <img class="img-responsive" src="/img/OvenWatt.png" />
         </div>
     </div>
     <input type="submit" class="btn btn-default" id="submitButton" value="Submit" />
@@ -127,59 +139,16 @@
 
         EnergyHack.Page.SubmitData = function (frm) {
 
-            var userData = new EnergyHack.Services.TakeUserInput();
-            userData.Data = $("#userForm").serialize();
-            EnergyHack.Ajax(userData);
+            window.location = '/Home/EnergyUse';
 
         }
 
-        EnergyHack.Page.GoogleGraphsDraw = function(){
-
-            // Create the data table.
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Topping');
-            data.addColumn('number', 'Slices');
-            data.addRows([
-              ['Mushrooms', 3],
-              ['Onions', 1],
-              ['Olives', 1],
-              ['Zucchini', 1],
-              ['Pepperoni', 2]
-            ]);
-
-            // Set chart options
-            var options = {'title':'How Much Pizza I Ate Last Night',
-                'width':400,
-                'height':300};
-
-            // Instantiate and draw our chart, passing in some options.
-            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-            chart.draw(data, options);
-
-        }
-
-        EnergyHack.Page.GoogleGraphsLoad = function () {
-
-            // Load the Visualization API and the piechart package.
-            google.load('visualization', '1.0', {'packages':['corechart']});
-
-            // Set a callback to run when the Google Visualization API is loaded.
-            google.setOnLoadCallback(drawChart);
-
-            // Callback that creates and populates a data table,
-            // instantiates the pie chart, passes in the data and
-            // draws it.
-            
-            EnergyHack.Page.GoogleGraphsDraw();
-
-
-        }
 
         EnergyHack.Page.StartUp = function () {
 
             EnergyHack.Page.SliderSetUp();
             EnergyHack.Page.ClickSubmit();
-            //EnergyHack.Page.GoogleGraphsLoad();
+
 
         }
 
