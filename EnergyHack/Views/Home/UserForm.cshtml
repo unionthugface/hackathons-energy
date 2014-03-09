@@ -26,10 +26,10 @@
     <div class="form-group row">
         <div class="col-xs-6">
             <div style="position:relative; padding-top: 100px">
-                <label for="heaters">Number of Heaters:</label>
-                <input type="number" id="heaters" name="heaters" class="input_number" />
-                <div id="heaterSlider"></div>
-            </div>
+            <label for="heaters">Number of Heaters:</label>
+            <input type="number" id="heaters" name="heaters" class="input_number" />
+            <div id="heaterSlider"></div>
+        </div>
         </div>
         <div class="col-xs-6">
             <p>Heater Energy Signature</p>
@@ -39,10 +39,10 @@
     <div class="form-group row">
         <div class="col-xs-6">
             <div style="position:relative; padding-top: 100px">
-                <label for="washers">Number of Washers:</label>
-                <input type="number" name="washers" id="washers" class="input_number" />
-                <div id="washerSlider"></div>
-            </div>
+            <label for="washers">Number of Washers:</label>
+            <input type="number" name="washers" id="washers" class="input_number" />
+            <div id="washerSlider"></div>
+        </div>
         </div>
         <div class="col-xs-6">
             <p>Washer Energy Signature</p>
@@ -52,10 +52,10 @@
     <div class="form-group row">
         <div class="col-xs-6">
             <div style="position:relative; padding-top: 100px">
-                <label for="dryers">Number of Dryers:</label>
-                <input type="number" name="dryers" id="dryers" class="input_number" />
-                <div id="dryerSlider"></div>
-            </div>
+            <label for="dryers">Number of Dryers:</label>
+            <input type="number" name="dryers" id="dryers" class="input_number" />
+            <div id="dryerSlider"></div>
+        </div>
         </div>
         <div class="col-xs-6">
             <p>Dryer Energy Signature</p>
@@ -65,10 +65,10 @@
     <div class="form-group row">
         <div class="col-xs-6">
             <div style="position:relative; padding-top: 100px">
-                <label for="ovens">Number of Ovens:</label>
-                <input type="number" name="ovens" id="ovens" class="input_number" />
-                <div id="ovenSlider"></div>
-            </div>
+            <label for="ovens">Number of Ovens:</label>
+            <input type="number" name="ovens" id="ovens" class="input_number" />
+            <div id="ovenSlider"></div>
+        </div>
         </div>
         <div class="col-xs-6">
             <p>Oven Energy Signature</p>
@@ -79,7 +79,7 @@
 </form>
 
 <!--Div that will hold the pie chart-->
-<div id="chart_div"></div>
+<div id="pie-chart-div"></div>
 
 
 @section scripts{
@@ -145,7 +145,7 @@
 
 
         EnergyHack.Page.StartUp = function () {
-
+            google.load('visualization', '1.0', { 'packages': ['corechart'] });
             EnergyHack.Page.SliderSetUp();
             EnergyHack.Page.ClickSubmit();
 

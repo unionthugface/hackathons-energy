@@ -37,7 +37,7 @@ function drawHistogram() {
             'https://docs.google.com/spreadsheet/ccc?key=0Agwv43LK71pfdFdKUklmZmQwTlFuS1gzbURYOVFMakE#gid=0');
         query.send(draw);
         
-    }
+        }
 
     function draw(response) {
         if (response.isError()) {
@@ -50,7 +50,7 @@ function drawHistogram() {
         chart.draw(ticketsData, {
             'isStacked': true, 'legend': 'bottom',
             'vAxis': { 'title': 'Power Consumption' }
-        });
+    });
 
         // Set a 'select' event listener for the table.
         // When the table is selected, we set the selection on the map.
@@ -65,8 +65,8 @@ function drawHistogram() {
             function () {
                 table.setSelection(map.getSelection());
             });
+        }
     }
-}
 
 function drawLineChart() {
         var data = new google.visualization.DataTable();
@@ -661,11 +661,11 @@ function drawLineChart() {
 
         var chart = new google.visualization.AnnotationChart(document.getElementById('line-chart-div'));
 
-        var options = {
+    var options = {
             displayAnnotations: true
-        };
+    };
 
-        chart.draw(data, options);
+    chart.draw(data, options);
 
 }
 
@@ -711,7 +711,7 @@ function redrawPieChart(data) {
 }
 
 function updatePieData(date) {
-
+    
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Appliance');
     data.addColumn('number', 'Energy Usage');
@@ -748,5 +748,5 @@ $('#toggle').click(function () {
         $('#histogram-div').hide();
         $('#line-chart-div').show();
         $(this).data("id", "line");
-    }
+}
 });

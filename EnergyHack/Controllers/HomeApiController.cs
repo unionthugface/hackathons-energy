@@ -24,7 +24,7 @@ namespace EnergyHack.Controllers
         }
 
         [Route("appliancesignal")]
-        [HttpGet]
+        [HttpPost]
         public HttpResponseMessage ApplianceSignal(SignatureRequestModel model)
         {
             if (!ModelState.IsValid)

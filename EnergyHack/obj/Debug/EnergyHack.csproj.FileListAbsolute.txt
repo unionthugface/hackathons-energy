@@ -56,6 +56,7 @@ C:\Users\SawbackAdmin\Documents\Visual Studio 2013\Projects\EnergyHack\EnergyHac
 C:\Users\SawbackAdmin\Documents\Visual Studio 2013\Projects\EnergyHack\EnergyHack\EnergyHack\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\SawbackAdmin\Documents\Visual Studio 2013\Projects\EnergyHack\EnergyHack\EnergyHack\obj\Debug\EnergyHack.dll
 C:\Users\SawbackAdmin\Documents\Visual Studio 2013\Projects\EnergyHack\EnergyHack\EnergyHack\obj\Debug\EnergyHack.pdb
+<<<<<<< HEAD
 C:\Users\SawbackAdmin\Documents\Visual Studio 2013\Projects\EnergyHack\EnergyHack\EnergyHack\obj\Debug\EnergyHack.csprojResolveAssemblyReference.cache
 C:\Users\winSoss\Desktop\EnergyHack\EnergyHack\bin\EnergyHack.dll.config
 C:\Users\winSoss\Desktop\EnergyHack\EnergyHack\bin\EnergyHack.dll
@@ -118,3 +119,65 @@ C:\Users\winSoss\Desktop\EnergyHack\EnergyHack\bin\Microsoft.Owin.Security.Micro
 C:\Users\winSoss\Desktop\EnergyHack\EnergyHack\obj\Debug\EnergyHack.csprojResolveAssemblyReference.cache
 C:\Users\winSoss\Desktop\EnergyHack\EnergyHack\obj\Debug\EnergyHack.dll
 C:\Users\winSoss\Desktop\EnergyHack\EnergyHack\obj\Debug\EnergyHack.pdb
+=======
+C:\Projects\hackathons-energy\EnergyHack\obj\Debug\EnergyHack.dll
+C:\Projects\hackathons-energy\EnergyHack\obj\Debug\EnergyHack.pdb
+C:\Projects\hackathons-energy\EnergyHack\bin\EnergyHack.dll.config
+C:\Projects\hackathons-energy\EnergyHack\bin\EnergyHack.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\EnergyHack.pdb
+C:\Projects\hackathons-energy\EnergyHack\bin\Antlr3.Runtime.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\EntityFramework.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\EntityFramework.SqlServer.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\Microsoft.Owin.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\Microsoft.Owin.Security.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\Microsoft.Owin.Security.Google.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\Microsoft.Web.Infrastructure.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\Newtonsoft.Json.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\Owin.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\System.Net.Http.Formatting.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\System.Web.Helpers.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\System.Web.Http.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\System.Web.Http.WebHost.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\System.Web.Mvc.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\System.Web.Optimization.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\System.Web.Razor.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\System.Web.WebPages.Deployment.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\System.Web.WebPages.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\System.Web.WebPages.Razor.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\WebGrease.dll
+C:\Projects\hackathons-energy\EnergyHack\bin\System.Web.Helpers.xml
+C:\Projects\hackathons-energy\EnergyHack\bin\System.Web.Mvc.xml
+C:\Projects\hackathons-energy\EnergyHack\bin\System.Web.Optimization.xml
+C:\Projects\hackathons-energy\EnergyHack\bin\System.Web.Razor.xml
+C:\Projects\hackathons-energy\EnergyHack\bin\System.Web.WebPages.xml
+C:\Projects\hackathons-energy\EnergyHack\bin\System.Web.WebPages.Deployment.xml
+C:\Projects\hackathons-energy\EnergyHack\bin\System.Web.WebPages.Razor.xml
+C:\Projects\hackathons-energy\EnergyHack\bin\Newtonsoft.Json.xml
+C:\Projects\hackathons-energy\EnergyHack\bin\Antlr3.Runtime.pdb
+C:\Projects\hackathons-energy\EnergyHack\bin\System.Net.Http.Formatting.xml
+C:\Projects\hackathons-energy\EnergyHack\bin\System.Web.Http.xml
+C:\Projects\hackathons-energy\EnergyHack\bin\System.Web.Http.WebHost.xml
+C:\Projects\hackathons-energy\EnergyHack\bin\EntityFramework.xml
+C:\Projects\hackathons-energy\EnergyHack\bin\EntityFramework.SqlServer.xml
+C:\Projects\hackathons-energy\EnergyHack\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Projects\hackathons-energy\EnergyHack\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Projects\hackathons-energy\EnergyHack\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Projects\hackathons-energy\EnergyHack\bin\Microsoft.Owin.xml
+C:\Projects\hackathons-energy\EnergyHack\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Projects\hackathons-energy\EnergyHack\bin\Microsoft.Owin.Security.xml
+C:\Projects\hackathons-energy\EnergyHack\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Projects\hackathons-energy\EnergyHack\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Projects\hackathons-energy\EnergyHack\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Projects\hackathons-energy\EnergyHack\bin\Microsoft.Owin.Security.Google.xml
+C:\Projects\hackathons-energy\EnergyHack\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Projects\hackathons-energy\EnergyHack\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+>>>>>>> 817ec1f99c7b56cbba3eb12315816cb718b6733a
