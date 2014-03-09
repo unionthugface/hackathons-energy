@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="container">
+        <div class="header">
+            <ul class="nav nav-pills pull-right">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <h3 class="text-muted">Hack for DoE</h3>
+        </div>
+        <div class="row marketing" style="text-align: center; margin:auto">
+            <h4>Choose a date range</h4>
+            <div style="margin:auto">
+                <div id="from" class="pull-left"></div>
+                <input type="text" hidden="hidden" id="from-field" />
+            </div>
+        </div>
+        <div class="row marketing" style="text-align: center">
+            <h4>Energy Usage by Appliance</h4>
+            <div id="pie-chart-div"></div>
+        </div>
+        <div class="row marketing">
+            <h4>Total Energy Use Over Time</h4>
+            <div id="line-chart-div"></div>
+        </div>
+        <div class="footer">
+            <p>Hack for DoE 2014</p>
+        </div>
+    </div>
